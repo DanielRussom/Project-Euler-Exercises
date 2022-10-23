@@ -15,5 +15,15 @@ namespace Project_Euler_Exercises.Test.MultiplesOfThreeOrFive
 
             Assert.AreEqual(0, result);
         }
+
+        [TestMethod]
+        public void Calculate_3()
+        {
+            var underTest = new MultipleOfThreeOrFiveSummer();
+
+            var result = underTest.SumTo(3);
+
+            Assert.AreEqual(3, result);
+        }
     }
 }
