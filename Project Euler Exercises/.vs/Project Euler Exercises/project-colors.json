@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "330c5249-1be3-4db1-874f-28aab3002338": {
+      "ProjectGuid": "330c5249-1be3-4db1-874f-28aab3002338",
+      "DisplayName": "Project Euler Exercises",
+      "ColorIndex": 0
+    },
+    "def8fb22-a55d-4923-8f07-f545a67d5d17": {
+      "ProjectGuid": "def8fb22-a55d-4923-8f07-f545a67d5d17",
+      "DisplayName": "Project Euler Exercises.Test",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
