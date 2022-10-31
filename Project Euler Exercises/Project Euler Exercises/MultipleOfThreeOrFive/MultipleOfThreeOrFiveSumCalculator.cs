@@ -2,23 +2,18 @@
 {
     public class MultipleOfThreeOrFiveSumCalculator
     {
+        private int[] values = new int[]{6, 5, 3};
+
         public int SumTo(int limit)
         {
             var result = 0;
 
-            if (limit >= 6)
+            foreach (var value in values)
             {
-                result += 6;
-            }
-
-            if (limit >= 5)
-            {
-                result += 5;
-            }
-
-            if (limit >= 3)
-            {
-                result += 3;
+                if (limit >= value)
+                {
+                    result += value;
+                }
             }
 
             return result;
