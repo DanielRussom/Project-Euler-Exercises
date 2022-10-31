@@ -4,17 +4,19 @@
     {
         public int SumTo(int limit)
         {
+            var result = 0;
+
             if (limit >= 5)
             {
-                return 8;
+                result += 5;
             }
 
             if (limit >= 3)
             {
-                return 3;
+                result += 3;
             }
 
-            return 0;
+            return result;
         }
     }
 }
