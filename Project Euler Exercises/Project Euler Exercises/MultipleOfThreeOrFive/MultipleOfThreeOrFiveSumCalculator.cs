@@ -1,6 +1,6 @@
 ﻿namespace Project_Euler_Exercises.MultiplesOfThreeOrFive
 {
-    public class MultipleOfThreeOrFiveSummer
+    public class MultipleOfThreeOrFiveSumCalculator
     {
         public int SumTo(int limit)
         {
