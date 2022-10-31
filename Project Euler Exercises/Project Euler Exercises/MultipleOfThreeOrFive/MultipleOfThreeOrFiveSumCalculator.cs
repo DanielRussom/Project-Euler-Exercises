@@ -6,6 +6,11 @@
         {
             var result = 0;
 
+            if (limit >= 6)
+            {
+                result += 6;
+            }
+
             if (limit >= 5)
             {
                 result += 5;
