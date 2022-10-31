@@ -4,7 +4,12 @@
     {
         public int SumTo(int limit)
         {
-            if(limit >= 3)
+            if (limit >= 5)
+            {
+                return 8;
+            }
+
+            if (limit >= 3)
             {
                 return 3;
             }
