@@ -2,7 +2,7 @@
 {
     public class MultipleOfThreeOrFiveSumCalculator
     {
-        private readonly int[] values = new int[]{10, 5};
+        private readonly int[] values = new int[]{20, 10, 5};
 
         public int SumTo(int limit)
         {
