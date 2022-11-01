@@ -19,6 +19,7 @@ namespace Project_Euler_Exercises.Test.MultiplesOfThreeOrFive
         [DataRow(15, 60)]
         [DataRow(18, 78)]
         [DataRow(20, 98)]
+        [DataRow(1000, 234168)]
         public void Calculate_0(int input, int expected)
         {
             var underTest = new MultipleOfThreeOrFiveSumCalculator();
