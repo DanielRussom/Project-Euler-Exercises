@@ -2,25 +2,15 @@
 {
     public class MultipleOfThreeOrFiveSumCalculator
     {
-        private readonly int[] values = new int[]{20, 10, 5};
-
         public int SumTo(int limit)
         {
             var result = 0;
 
             for(int count = 1; count <= limit; count++)
             {
-                if(count % 3 == 0)
+                if(count % 3 == 0 || count % 5 == 0)
                 {
                     result += count;
-                }
-            }
-
-            foreach (var value in values)
-            {
-                if (limit >= value)
-                {
-                    result += value;
                 }
             }
 
