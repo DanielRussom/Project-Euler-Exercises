@@ -9,6 +9,8 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
         [TestMethod ("Calculate expected sum under given limit")]
         [DataRow(1, 0)]
         [DataRow(2, 2)]
+        [DataRow(7, 2)]
+        [DataRow(8, 10)]
         public void Calculate_expected_result(int limit, int expected)
         {
             var underTest = new EvenFibonacciNumberCalculator();

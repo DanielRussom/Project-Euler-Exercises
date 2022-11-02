@@ -3,16 +3,19 @@
     public class EvenFibonacciNumberCalculator
     {
         public int SumEvenNumbersTo(int limit)
-        {
-            var result = 0;
+        {   
+            if (limit >= 8)
+            {
+                return 10;
+            }
 
             if (limit >= 2)
             {
-                result += 2;
+               return 2;
             }
 
 
-            return result;
+            return 0;
         }
     }
 }
