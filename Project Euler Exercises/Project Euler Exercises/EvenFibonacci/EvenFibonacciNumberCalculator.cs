@@ -11,10 +11,6 @@
                 result += 2;
             }
 
-            if (limit >= 4)
-            {
-                result += 4;
-            }
 
             return result;
         }
