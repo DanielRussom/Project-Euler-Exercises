@@ -6,26 +6,17 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
     [TestClass]
     public class EvenFibonacciNumberCalculatorShould
     {
-        [TestMethod]
-        public void Calculate_0()
+        [TestMethod ("Calculate expected sum under given limit")]
+        [DataRow(1, 0)]
+        [DataRow(2, 2)]
+        [DataRow(3, 2)]
+        public void Calculate_expected_result(int limit, int expected)
         {
             var underTest = new EvenFibonacciNumberCalculator();
-            var limit = 1;
 
             var result = underTest.SumEvenNumbersTo(limit);
 
-            Assert.AreEqual(0, result);
-        }
-
-        [TestMethod]
-        public void Calculate_2()
-        {
-            var underTest = new EvenFibonacciNumberCalculator();
-            var limit = 2;
-
-            var result = underTest.SumEvenNumbersTo(limit);
-
-            Assert.AreEqual(2, result);
+            Assert.AreEqual(expected, result);
         }
     }
 }
