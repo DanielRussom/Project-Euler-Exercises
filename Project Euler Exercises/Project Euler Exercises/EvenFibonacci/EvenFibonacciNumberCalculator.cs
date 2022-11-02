@@ -4,17 +4,19 @@
     {
         public int SumEvenNumbersTo(int limit)
         {
-            if(limit >= 4)
+            var result = 0;
+
+            if (limit >= 2)
             {
-                return 6;
+                result += 2;
             }
 
-            if(limit >= 2)
+            if (limit >= 4)
             {
-                return 2;
+                result += 4;
             }
 
-            return 0;
+            return result;
         }
     }
 }
