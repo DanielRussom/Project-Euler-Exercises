@@ -8,31 +8,33 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
     [TestClass]
     public class SumEvenFibonacciNumbersEngineShould
     {
-        [TestMethod]
-        public void Output_expected_result()
+        private SumEvenFibonacciNumbersEngine UnderTest;
+        private Mock<IFibonacciNumberGenerator> generator;
+        private Mock<INumberSummer> summer;
+
+        public SumEvenFibonacciNumbersEngineShould()
         {
-            var expected = 2;
-            var limit = 2;
-
-            var generator = new Mock<IFibonacciNumberGenerator>();
-            var engine = new SumEvenFibonacciNumbersEngine(generator.Object);
-
-            var result = engine.SumToLimit(limit);
-
-            Assert.AreEqual(expected, result);
+            generator = new Mock<IFibonacciNumberGenerator>();
+            summer = new Mock<INumberSummer>();
+            UnderTest = new SumEvenFibonacciNumbersEngine(generator.Object, summer.Object);
         }
 
         [TestMethod]
-        public void Trigger_fibonacci_number_generator()
+        [DataRow(2)]
+        [DataRow(6)]
+        [DataRow(17)]
+        public void Sum_even_numbers_from_generated_fibonacci_list(int expectedResult)
         {
             var limit = 2;
-            var generator = new Mock<IFibonacciNumberGenerator>();
-            generator.Setup(x => x.GenerateToLimit(limit)).Returns(new List<int>());
-            var engine = new SumEvenFibonacciNumbersEngine(generator.Object);
+            var expectedFibonacciResult = new List<int> { 1, 2, 6 };
+            generator.Setup(x => x.GenerateToLimit(limit)).Returns(expectedFibonacciResult);
+            summer.Setup(x => x.SumEven(expectedFibonacciResult)).Returns(expectedResult);
 
-            var result = engine.SumToLimit(limit);
+            var result = UnderTest.SumToLimit(limit);
 
             generator.Verify(x => x.GenerateToLimit(limit), Times.Once());
+            summer.Verify(x => x.SumEven(expectedFibonacciResult), Times.Once());
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }

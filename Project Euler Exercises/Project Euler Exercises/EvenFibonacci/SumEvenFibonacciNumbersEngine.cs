@@ -2,23 +2,21 @@
 {
     public class SumEvenFibonacciNumbersEngine
     {
-        private readonly IFibonacciNumberGenerator generator;
+        private readonly IFibonacciNumberGenerator fibonacciGenerator;
+        private readonly INumberSummer numberSummer;
 
-        public SumEvenFibonacciNumbersEngine()
+        public SumEvenFibonacciNumbersEngine(IFibonacciNumberGenerator generator, INumberSummer numberSummer)
         {
-        }
-
-        public SumEvenFibonacciNumbersEngine(IFibonacciNumberGenerator generator)
-        {
-            this.generator = generator;
+            this.fibonacciGenerator = generator;
+            this.numberSummer = numberSummer;
         }
 
         public object SumToLimit(int limit)
         {
-            generator.GenerateToLimit(limit);
+            var generatedNumbers = fibonacciGenerator.GenerateToLimit(limit);
+            var result = numberSummer.SumEven(generatedNumbers);
 
-
-            return 2;
+            return result;
         }
     }
 }
