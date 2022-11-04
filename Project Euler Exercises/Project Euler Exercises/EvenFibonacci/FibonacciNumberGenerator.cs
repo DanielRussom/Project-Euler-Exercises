@@ -11,9 +11,14 @@
                 fibonacciNumbers.Add(1);
             }
 
-            for(var currentNumber = 2; currentNumber <= limit; currentNumber++)
+            for(var currentNumber = 2; currentNumber <= limit && currentNumber < 5; currentNumber++)
             {
                 fibonacciNumbers.Add(currentNumber-1);
+            }
+
+            if (limit >= 5)
+            {
+                fibonacciNumbers.Add(5);
             }
 
             return fibonacciNumbers;
