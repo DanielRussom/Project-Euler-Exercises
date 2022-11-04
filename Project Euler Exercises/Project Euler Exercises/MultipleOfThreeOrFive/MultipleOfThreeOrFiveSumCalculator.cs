@@ -8,13 +8,18 @@
 
             for(int count = 1; count <= limit; count++)
             {
-                if(count % 3 == 0 || count % 5 == 0)
+                if (IsMultipleOfThreeOrFive(count))
                 {
                     result += count;
                 }
             }
 
             return result;
+        }
+
+        private bool IsMultipleOfThreeOrFive(int count)
+        {
+            return count % 3 == 0 || count % 5 == 0;
         }
     }
 }
