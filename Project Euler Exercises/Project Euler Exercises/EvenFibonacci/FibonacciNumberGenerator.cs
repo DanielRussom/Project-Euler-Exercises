@@ -4,7 +4,7 @@
     {
         public List<int> GenerateToLimit(int limit)
         {
-            throw new NotImplementedException();
+            return new List<int>();
         }
     }
 }
