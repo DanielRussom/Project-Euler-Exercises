@@ -16,6 +16,11 @@
                 fibonacciNumbers.Add(1);
             }
 
+            if (limit > 2)
+            {
+                fibonacciNumbers.Add(2);
+            }
+
             return fibonacciNumbers;
         }
     }

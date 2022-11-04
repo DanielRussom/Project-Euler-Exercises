@@ -11,6 +11,7 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
         [DataRow (0, new int[] { })]
         [DataRow(1, new int[] { 1 })]
         [DataRow(2, new int[] { 1, 1 })]
+        [DataRow(3, new int[] { 1, 1, 2 })]
         public void Generate_empty_list(int limit, int[] expectedResult)
         {
             var underTest = new FibonacciNumberGenerator();
