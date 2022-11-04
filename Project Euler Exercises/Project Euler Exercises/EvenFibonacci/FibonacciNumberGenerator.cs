@@ -14,7 +14,7 @@
 
             if (limit == 1)
             {
-                return new List<int> { 1 };
+                return new List<int> { 1, 1 };
             }
 
             return GenerateFibonacciNumbers(limit);
@@ -25,10 +25,11 @@
             ResetCurrentNumbers();
             var fibonacciNumbers = new List<int> { previousNumber, currentNumber };
 
-            for (var index = 3; index <= limit; index++)
+            UpdateToNextFibonacciNumber();
+            while (currentNumber <= limit)
             {
-                UpdateToNextFibonacciNumber();
                 fibonacciNumbers.Add(currentNumber);
+                UpdateToNextFibonacciNumber();
             }
 
             return fibonacciNumbers;
