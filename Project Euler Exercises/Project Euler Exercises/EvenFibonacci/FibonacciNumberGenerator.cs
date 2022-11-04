@@ -6,24 +6,26 @@
         {
             var fibonacciNumbers = new List<int>();
 
+            var previousNumber = 1;
+            var currentNumber = 1;
+
             if (limit > 0)
             {
-                fibonacciNumbers.Add(1);
+                fibonacciNumbers.Add(currentNumber);
             }
 
-            for(var currentNumber = 2; currentNumber <= limit && currentNumber < 5; currentNumber++)
+            if (limit > 1)
             {
-                fibonacciNumbers.Add(currentNumber-1);
+                fibonacciNumbers.Add(currentNumber);
             }
 
-            if (limit >= 5)
+            for (var index = 3; index <= limit; index++)
             {
-                fibonacciNumbers.Add(5);
-            }
+                var oldCurrentNumber = currentNumber;
+                currentNumber += previousNumber;
+                previousNumber = oldCurrentNumber;
 
-            if (limit >= 6)
-            {
-                fibonacciNumbers.Add(8);
+                fibonacciNumbers.Add(currentNumber);
             }
 
             return fibonacciNumbers;
