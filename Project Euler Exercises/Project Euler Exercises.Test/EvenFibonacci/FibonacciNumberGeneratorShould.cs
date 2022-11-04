@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Project_Euler_Exercises.EvenFibonacci;
-using System.Collections.Generic;
 
 namespace Project_Euler_Exercises.Test.EvenFibonacci
 {
