@@ -21,6 +21,11 @@
                 fibonacciNumbers.Add(5);
             }
 
+            if (limit >= 6)
+            {
+                fibonacciNumbers.Add(8);
+            }
+
             return fibonacciNumbers;
         }
     }
