@@ -4,6 +4,11 @@
     {
         public List<int> GenerateToLimit(int limit)
         {
+            if(limit > 0)
+            {
+                return new List<int> { limit };
+            }
+
             return new List<int>();
         }
     }
