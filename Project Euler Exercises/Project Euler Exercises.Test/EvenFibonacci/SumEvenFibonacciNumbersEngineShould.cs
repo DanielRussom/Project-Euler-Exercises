@@ -8,9 +8,9 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
     [TestClass]
     public class SumEvenFibonacciNumbersEngineShould
     {
-        private SumEvenFibonacciNumbersEngine UnderTest;
-        private Mock<IFibonacciNumberGenerator> generator;
-        private Mock<INumberSummer> summer;
+        private readonly SumEvenFibonacciNumbersEngine UnderTest;
+        private readonly Mock<IFibonacciNumberGenerator> generator;
+        private readonly Mock<INumberSummer> summer;
 
         public SumEvenFibonacciNumbersEngineShould()
         {

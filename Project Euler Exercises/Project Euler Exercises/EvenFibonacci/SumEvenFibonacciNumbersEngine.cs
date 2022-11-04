@@ -5,18 +5,17 @@
         private readonly IFibonacciNumberGenerator fibonacciGenerator;
         private readonly INumberSummer numberSummer;
 
-        public SumEvenFibonacciNumbersEngine(IFibonacciNumberGenerator generator, INumberSummer numberSummer)
+        public SumEvenFibonacciNumbersEngine(IFibonacciNumberGenerator fibonacciGenerator, INumberSummer numberSummer)
         {
-            this.fibonacciGenerator = generator;
+            this.fibonacciGenerator = fibonacciGenerator;
             this.numberSummer = numberSummer;
         }
 
-        public object SumToLimit(int limit)
+        public int SumToLimit(int limit)
         {
             var generatedNumbers = fibonacciGenerator.GenerateToLimit(limit);
-            var result = numberSummer.SumEven(generatedNumbers);
 
-            return result;
+            return numberSummer.SumEven(generatedNumbers);
         }
     }
 }
