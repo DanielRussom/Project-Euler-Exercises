@@ -11,11 +11,12 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
         public void Generate_empty_list()
         {
             var limit = 0;
+            var expectedResult = new List<int>();
             var underTest = new FibonacciNumberGenerator();
 
             var result = underTest.GenerateToLimit(limit);
 
-            Assert.IsTrue(result.Count == 0);
+            CollectionAssert.AreEqual(expectedResult, result);
         }
 
         [TestMethod]
