@@ -4,20 +4,20 @@
     {
         public List<int> GenerateToLimit(int limit)
         {
-            var fibonacciNumbers = new List<int>();
+            if (limit == 0)
+            {
+                return new List<int>();
+            }
+
+            if (limit == 1)
+            {
+                return new List<int> { 1 };
+            }
 
             var previousNumber = 1;
             var currentNumber = 1;
 
-            if (limit > 0)
-            {
-                fibonacciNumbers.Add(currentNumber);
-            }
-
-            if (limit > 1)
-            {
-                fibonacciNumbers.Add(currentNumber);
-            }
+            var fibonacciNumbers = new List<int> { previousNumber, currentNumber };
 
             for (var index = 3; index <= limit; index++)
             {
