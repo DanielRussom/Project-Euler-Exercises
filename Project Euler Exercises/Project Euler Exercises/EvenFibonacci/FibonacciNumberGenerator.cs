@@ -11,19 +11,9 @@
                 fibonacciNumbers.Add(1);
             }
 
-            if (limit > 1)
+            for(var currentNumber = 2; currentNumber <= limit; currentNumber++)
             {
-                fibonacciNumbers.Add(1);
-            }
-
-            if (limit > 2)
-            {
-                fibonacciNumbers.Add(2);
-            }
-
-            if (limit > 3)
-            {
-                fibonacciNumbers.Add(3);
+                fibonacciNumbers.Add(currentNumber-1);
             }
 
             return fibonacciNumbers;
