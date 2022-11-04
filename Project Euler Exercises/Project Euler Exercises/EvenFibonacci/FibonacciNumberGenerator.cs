@@ -4,12 +4,19 @@
     {
         public List<int> GenerateToLimit(int limit)
         {
-            if(limit > 0)
+            var fibonacciNumbers = new List<int>();
+
+            if (limit > 0)
             {
-                return new List<int> { limit };
+                fibonacciNumbers.Add(1);
             }
 
-            return new List<int>();
+            if (limit > 1)
+            {
+                fibonacciNumbers.Add(1);
+            }
+
+            return fibonacciNumbers;
         }
     }
 }

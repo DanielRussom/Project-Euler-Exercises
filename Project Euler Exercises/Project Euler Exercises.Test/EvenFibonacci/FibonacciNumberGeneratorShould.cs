@@ -8,22 +8,11 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
     public class FibonacciNumberGeneratorShould
     {
         [TestMethod]
-        public void Generate_empty_list()
+        [DataRow (0, new int[] { })]
+        [DataRow(1, new int[] { 1 })]
+        [DataRow(2, new int[] { 1, 1 })]
+        public void Generate_empty_list(int limit, int[] expectedResult)
         {
-            var limit = 0;
-            var expectedResult = new List<int>();
-            var underTest = new FibonacciNumberGenerator();
-
-            var result = underTest.GenerateToLimit(limit);
-
-            CollectionAssert.AreEqual(expectedResult, result);
-        }
-
-        [TestMethod]
-        public void Generate_1()
-        {
-            var limit = 1;
-            var expectedResult = new List<int> { 1 };
             var underTest = new FibonacciNumberGenerator();
 
             var result = underTest.GenerateToLimit(limit);
