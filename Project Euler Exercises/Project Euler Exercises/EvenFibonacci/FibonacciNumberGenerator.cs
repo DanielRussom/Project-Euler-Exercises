@@ -2,6 +2,9 @@
 {
     public class FibonacciNumberGenerator : IFibonacciNumberGenerator
     {
+        private int previousNumber;
+        private int currentNumber;
+
         public List<int> GenerateToLimit(int limit)
         {
             if (limit == 0)
@@ -14,21 +17,34 @@
                 return new List<int> { 1 };
             }
 
-            var previousNumber = 1;
-            var currentNumber = 1;
+            return GenerateFibonacciNumbers(limit);
+        }
 
+        private List<int> GenerateFibonacciNumbers(int limit)
+        {
+            ResetCurrentNumbers();
             var fibonacciNumbers = new List<int> { previousNumber, currentNumber };
 
             for (var index = 3; index <= limit; index++)
             {
-                var oldCurrentNumber = currentNumber;
-                currentNumber += previousNumber;
-                previousNumber = oldCurrentNumber;
-
+                UpdateToNextFibonacciNumber();
                 fibonacciNumbers.Add(currentNumber);
             }
 
             return fibonacciNumbers;
+        }
+
+        private void ResetCurrentNumbers()
+        {
+            previousNumber = 1;
+            currentNumber = 1;
+        }
+
+        private void UpdateToNextFibonacciNumber()
+        {
+            var temporaryPreviousNumber = currentNumber;
+            currentNumber += previousNumber;
+            previousNumber = temporaryPreviousNumber;
         }
     }
 }
