@@ -20,11 +20,23 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
         }
 
         [TestMethod]
-        public void Sum_all_numbers_from_list_with_only_even_numbers()
+        public void Calculate_2_for_list_containing_only_2()
         {
             var underTest = new NumberSummer();
             var expected = 2;
             var input = new List<int> { 2 };
+
+            var result = underTest.SumEven(input);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Calculate_4_for_list_containing_2_twice()
+        {
+            var underTest = new NumberSummer();
+            var expected = 4;
+            var input = new List<int> { 2, 2 };
 
             var result = underTest.SumEven(input);
 

@@ -6,7 +6,7 @@
         {
             if (numberList.Any())
             {
-                return numberList.First();
+                return numberList.Sum();
             }
 
             return 0;
