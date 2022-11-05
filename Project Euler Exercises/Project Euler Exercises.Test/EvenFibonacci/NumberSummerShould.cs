@@ -22,13 +22,13 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
         }
 
         [TestMethod]
-        public void Not_include_odd_numbers_in_sum()
+        [DataRow(0, new int[] { 1 })]
+        [DataRow(2, new int[] { 2, 5 })]
+        public void Not_include_odd_numbers_in_sum(int expected, int[] input)
         {
-            var expected = 0;
             var underTest = new NumberSummer();
-            var input = new List<int> { 1 };
 
-            var result = underTest.SumEven(input);
+            var result = underTest.SumEven(new List<int>(input));
 
             Assert.AreEqual(expected, result);
         }
