@@ -4,7 +4,12 @@
     {
         public int SumEven(List<int> numberList)
         {
-            return numberList.Where(number => number % 2 == 0).Sum();
+            var evenNumbers = numberList.Where(number => IsEven(number));
+            return evenNumbers.Sum();
+        }
+        private bool IsEven(int number)
+        {
+            return number % 2 == 0;
         }
     }
 }
