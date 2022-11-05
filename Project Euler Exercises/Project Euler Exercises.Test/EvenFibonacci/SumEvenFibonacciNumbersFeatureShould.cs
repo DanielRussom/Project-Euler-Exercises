@@ -13,9 +13,8 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
             var limit = 100;
 
             var fibonacciGenerator = new FibonacciNumberGenerator();
-            var numberSummer = new NumberSummer();
 
-            var numberEngine = new SumEvenFibonacciNumbersEngine(fibonacciGenerator, numberSummer);
+            var numberEngine = new SumEvenFibonacciNumbersEngine(fibonacciGenerator);
 
             var result = numberEngine.SumToLimit(limit);
 

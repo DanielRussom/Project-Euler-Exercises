@@ -3,12 +3,10 @@
     public class SumEvenFibonacciNumbersEngine
     {
         private readonly IFibonacciNumberGenerator fibonacciGenerator;
-        private readonly INumberSummer numberSummer;
 
-        public SumEvenFibonacciNumbersEngine(IFibonacciNumberGenerator fibonacciGenerator, INumberSummer numberSummer)
+        public SumEvenFibonacciNumbersEngine(IFibonacciNumberGenerator fibonacciGenerator)
         {
             this.fibonacciGenerator = fibonacciGenerator;
-            this.numberSummer = numberSummer;
         }
 
         public int SumToLimit(int limit)

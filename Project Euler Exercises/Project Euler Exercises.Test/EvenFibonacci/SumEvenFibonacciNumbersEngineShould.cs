@@ -9,13 +9,11 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
     {
         private readonly SumEvenFibonacciNumbersEngine UnderTest;
         private readonly Mock<IFibonacciNumberGenerator> generator;
-        private readonly Mock<INumberSummer> summer;
 
         public SumEvenFibonacciNumbersEngineShould()
         {
             generator = new Mock<IFibonacciNumberGenerator>();
-            summer = new Mock<INumberSummer>();
-            UnderTest = new SumEvenFibonacciNumbersEngine(generator.Object, summer.Object);
+            UnderTest = new SumEvenFibonacciNumbersEngine(generator.Object);
         }
 
         [TestMethod]
