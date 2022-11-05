@@ -4,7 +4,7 @@
     {
         public int SumEven(List<int> expectedFibonacciResult)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
