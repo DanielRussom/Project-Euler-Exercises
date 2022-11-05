@@ -2,11 +2,11 @@
 {
     public class NumberSummer : INumberSummer
     {
-        public int SumEven(List<int> expectedFibonacciResult)
+        public int SumEven(List<int> numberList)
         {
-            if (expectedFibonacciResult.Any())
+            if (numberList.Any())
             {
-                return expectedFibonacciResult.First();
+                return numberList.First();
             }
 
             return 0;
