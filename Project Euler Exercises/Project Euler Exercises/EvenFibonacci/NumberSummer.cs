@@ -4,12 +4,7 @@
     {
         public int SumEven(List<int> numberList)
         {
-            if (numberList.Any())
-            {
-                return numberList.Sum();
-            }
-
-            return 0;
+            return numberList.Sum();
         }
     }
 }
