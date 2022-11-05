@@ -4,6 +4,11 @@
     {
         public int SumEven(List<int> expectedFibonacciResult)
         {
+            if (expectedFibonacciResult.Any())
+            {
+                return expectedFibonacciResult.First();
+            }
+
             return 0;
         }
     }
