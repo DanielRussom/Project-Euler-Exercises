@@ -18,9 +18,9 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
         {
             var underTest = new FibonacciNumberGenerator();
 
-            var result = underTest.GenerateToLimit(limit);
+            var result = underTest.GenerateNumbersToLimit(limit);
 
-            CollectionAssert.AreEqual(expectedResult, result);
+            CollectionAssert.AreEqual(expectedResult, result.GetNumbers());
         }
     }
 }

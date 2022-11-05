@@ -7,22 +7,17 @@
 
         public INumberList GenerateNumbersToLimit(int limit)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<int> GenerateToLimit(int limit)
-        {
             if (limit == 0)
             {
-                return new List<int>();
+                return new NumberList(new List<int>());
             }
 
             if (limit == 1)
             {
-                return new List<int> { 1, 1 };
+                return new NumberList(new List<int> { 1, 1 });
             }
 
-            return GenerateFibonacciNumbers(limit);
+            return new NumberList(GenerateFibonacciNumbers(limit));
         }
 
         private List<int> GenerateFibonacciNumbers(int limit)

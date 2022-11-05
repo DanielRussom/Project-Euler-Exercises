@@ -1,8 +1,11 @@
-﻿namespace Project_Euler_Exercises.EvenFibonacci
+﻿using System.Collections;
+
+namespace Project_Euler_Exercises.EvenFibonacci
 {
     public interface INumberList
     {
         int SumEven();
+        ICollection GetNumbers();
     }
 
     public class NumberList : INumberList
@@ -12,6 +15,11 @@
         public NumberList(List<int> numbers)
         {
             this.numbers = numbers;
+        }
+
+        public ICollection GetNumbers()
+        {
+            return numbers;
         }
 
         public int SumEven()
