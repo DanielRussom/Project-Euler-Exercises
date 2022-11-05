@@ -3,5 +3,7 @@
     public interface IFibonacciNumberGenerator
     {
         public List<int> GenerateToLimit(int limit);
+
+        public INumberList GenerateNumbersToLimit(int limit);
     }
 }

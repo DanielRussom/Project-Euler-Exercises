@@ -5,6 +5,11 @@
         private int previousNumber;
         private int currentNumber;
 
+        public INumberList GenerateNumbersToLimit(int limit)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<int> GenerateToLimit(int limit)
         {
             if (limit == 0)

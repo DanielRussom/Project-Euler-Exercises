@@ -13,9 +13,9 @@
 
         public int SumToLimit(int limit)
         {
-            var generatedNumbers = fibonacciGenerator.GenerateToLimit(limit);
+            var generatedNumbers = fibonacciGenerator.GenerateNumbersToLimit(limit);
 
-            return numberSummer.SumEven(generatedNumbers);
+            return generatedNumbers.SumEven();
         }
     }
 }

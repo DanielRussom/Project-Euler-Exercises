@@ -26,14 +26,13 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
         public void Sum_even_numbers_from_generated_fibonacci_list(int expectedResult)
         {
             var limit = 2;
-            var expectedFibonacciResult = new List<int> { 1, 2, 6 };
-            generator.Setup(x => x.GenerateToLimit(limit)).Returns(expectedFibonacciResult);
-            summer.Setup(x => x.SumEven(expectedFibonacciResult)).Returns(expectedResult);
+            var expectedFibonacciResult = new Mock<INumberList>(); 
+            generator.Setup(x => x.GenerateNumbersToLimit(limit)).Returns(expectedFibonacciResult.Object);
+            expectedFibonacciResult.Setup(x => x.SumEven()).Returns(expectedResult);
 
             var result = UnderTest.SumToLimit(limit);
 
-            generator.Verify(x => x.GenerateToLimit(limit), Times.Once());
-            summer.Verify(x => x.SumEven(expectedFibonacciResult), Times.Once());
+            generator.Verify(x => x.GenerateNumbersToLimit(limit), Times.Once());
             Assert.AreEqual(expectedResult, result);
         }
     }
