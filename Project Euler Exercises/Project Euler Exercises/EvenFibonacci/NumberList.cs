@@ -2,15 +2,9 @@
 
 namespace Project_Euler_Exercises.EvenFibonacci
 {
-    public interface INumberList
-    {
-        int SumEven();
-        ICollection GetNumbers();
-    }
-
     public class NumberList : INumberList
     {
-        private List<int> numbers;
+        private readonly List<int> numbers;
 
         public NumberList(List<int> numbers)
         {
@@ -24,8 +18,13 @@ namespace Project_Euler_Exercises.EvenFibonacci
 
         public int SumEven()
         {
-            var evenNumbers = numbers.Where(number => IsEven(number));
+            IEnumerable<int> evenNumbers = GetEvenNumbers();
             return evenNumbers.Sum();
+        }
+
+        private IEnumerable<int> GetEvenNumbers()
+        {
+            return numbers.Where(number => IsEven(number));
         }
 
         private bool IsEven(int number)
