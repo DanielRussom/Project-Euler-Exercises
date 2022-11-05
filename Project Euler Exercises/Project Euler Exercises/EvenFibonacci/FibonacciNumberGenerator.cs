@@ -12,11 +12,6 @@
                 return new NumberList(new List<int>());
             }
 
-            if (limit == 1)
-            {
-                return new NumberList(new List<int> { 1, 1 });
-            }
-
             return new NumberList(GenerateFibonacciNumbers(limit));
         }
 

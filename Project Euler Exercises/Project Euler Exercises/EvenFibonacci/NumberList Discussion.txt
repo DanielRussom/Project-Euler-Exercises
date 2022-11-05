@@ -1,0 +1,12 @@
+﻿In NumberList, there's a method that exists just for testing purposes - I'm not a fan of this
+
+Suggested changes:
+	Replace with Equals() method
+	{ 
+		- Reduces visibility of object properties
+		- Feels like it could be more clutter than just having the getter
+	}
+	Use a factory to build the class - perform assertions on the factory being called
+	{
+		- Adds another class specifically for building the object
+	}
