@@ -4,7 +4,7 @@
     {
         public int SumEven(List<int> numberList)
         {
-            return numberList.Sum();
+            return numberList.Where(number => number % 2 == 0).Sum();
         }
     }
 }

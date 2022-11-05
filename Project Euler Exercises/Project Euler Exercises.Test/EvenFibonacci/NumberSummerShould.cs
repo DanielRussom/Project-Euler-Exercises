@@ -20,5 +20,17 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
 
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void Not_include_odd_numbers_in_sum()
+        {
+            var expected = 0;
+            var underTest = new NumberSummer();
+            var input = new List<int> { 1 };
+
+            var result = underTest.SumEven(input);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }
