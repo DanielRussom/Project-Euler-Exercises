@@ -16,7 +16,13 @@
 
         public int SumEven()
         {
-            throw new NotImplementedException();
+            var evenNumbers = numbers.Where(number => IsEven(number));
+            return evenNumbers.Sum();
+        }
+
+        private bool IsEven(int number)
+        {
+            return number % 2 == 0;
         }
     }
 }
