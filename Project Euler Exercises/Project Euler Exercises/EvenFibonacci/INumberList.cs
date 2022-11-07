@@ -5,6 +5,6 @@ namespace Project_Euler_Exercises.EvenFibonacci
     public interface INumberList
     {
         int SumEven();
-        ICollection GetNumbers();
+        IReadOnlyCollection<int> GetNumbers();
     }
 }

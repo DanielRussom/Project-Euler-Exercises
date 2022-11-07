@@ -4,16 +4,16 @@ namespace Project_Euler_Exercises.EvenFibonacci
 {
     public class NumberList : INumberList
     {
-        private readonly List<int> numbers;
+        private readonly List<int> topSecretNumbers;
 
         public NumberList(List<int> numbers)
         {
-            this.numbers = numbers;
+            this.topSecretNumbers = numbers;
         }
 
-        public ICollection GetNumbers()
+        public IReadOnlyCollection<int> GetNumbers()
         {
-            return numbers;
+            return topSecretNumbers;
         }
 
         public int SumEven()
@@ -24,7 +24,7 @@ namespace Project_Euler_Exercises.EvenFibonacci
 
         private IEnumerable<int> GetEvenNumbers()
         {
-            return numbers.Where(number => IsEven(number));
+            return topSecretNumbers.Where(number => IsEven(number));
         }
 
         private bool IsEven(int number)

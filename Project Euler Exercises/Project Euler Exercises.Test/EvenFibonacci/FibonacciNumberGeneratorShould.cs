@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Project_Euler_Exercises.EvenFibonacci;
+using System.Collections;
+using System.Collections.ObjectModel;
 
 namespace Project_Euler_Exercises.Test.EvenFibonacci
 {
@@ -7,7 +9,7 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
     public class FibonacciNumberGeneratorShould
     {
         [TestMethod]
-        [DataRow (0, new int[] { })]
+        [DataRow(0, new int[] { })]
         [DataRow(1, new int[] { 1, 1 })]
         [DataRow(2, new int[] { 1, 1, 2 })]
         [DataRow(3, new int[] { 1, 1, 2, 3 })]
@@ -20,7 +22,7 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
 
             var result = underTest.GenerateNumbersToLimit(limit);
 
-            CollectionAssert.AreEqual(expectedResult, result.GetNumbers());
+            CollectionAssert.AreEqual(expectedResult, (ICollection)result.GetNumbers());
         }
     }
 }
