@@ -6,16 +6,16 @@ using System.Collections.Generic;
 namespace Project_Euler_Exercises.Test.EvenFibonacci
 {
     [TestClass]
-    public class NumberListShould
+    public class EvenNumberListShould
     {
         [TestMethod]
         [DataRow (0, new int[]{ })]
         [DataRow(2, new int[] { 2 })]
-        [DataRow(3, new int[] { 1, 2 })]
+        [DataRow(4, new int[] { 2, 2 })]
         [DataRow(10, new int[] { 8, 2 })]
-        public void Sum_all_numbers_in_list(int expected, int[] input)
+        public void Sum_all_even_numbers_in_list(int expected, int[] input)
         {
-            var underTest = new NumberList(new List<int>(input));
+            var underTest = new EvenNumberList(new List<int>(input));
 
             var result = underTest.Sum();
 
@@ -23,15 +23,15 @@ namespace Project_Euler_Exercises.Test.EvenFibonacci
         }
 
         [TestMethod]
-        [DataRow(new int[] { 1 })]
-        [DataRow(new int[] { 2, 5 })]
-        public void Get_all_numbers_in_list(int[] input)
+        [DataRow(new int[] { }, new int[] { 1 })]
+        [DataRow(new int[] { 2 }, new int[] { 2, 5 })]
+        public void Get_all_even_numbers_in_list(int[] expected, int[] input)
         {
-            var underTest = new NumberList(new List<int>(input));
+            var underTest = new EvenNumberList(new List<int>(input));
 
             var result = underTest.GetNumbers();
 
-            CollectionAssert.AreEquivalent(input, (ICollection)result);
+            CollectionAssert.AreEquivalent(expected, (ICollection)result);
         }
     }
 }

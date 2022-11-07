@@ -13,7 +13,7 @@
         {
             var generatedNumbers = fibonacciGenerator.GenerateNumbersToLimit(limit);
 
-            return generatedNumbers.SumEven();
+            return new EvenNumberList(generatedNumbers).Sum();
         }
     }
 }

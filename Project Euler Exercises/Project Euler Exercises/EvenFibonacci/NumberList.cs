@@ -1,35 +1,22 @@
-﻿using System.Collections;
-
-namespace Project_Euler_Exercises.EvenFibonacci
+﻿namespace Project_Euler_Exercises.EvenFibonacci
 {
     public class NumberList : INumberList
     {
-        private readonly List<int> topSecretNumbers;
+        private readonly List<int> numbers;
 
         public NumberList(List<int> numbers)
         {
-            this.topSecretNumbers = numbers;
+            this.numbers = numbers;
         }
 
         public IReadOnlyCollection<int> GetNumbers()
         {
-            return topSecretNumbers;
+            return numbers;
         }
 
-        public int SumEven()
+        public int Sum()
         {
-            IEnumerable<int> evenNumbers = GetEvenNumbers();
-            return evenNumbers.Sum();
-        }
-
-        private IEnumerable<int> GetEvenNumbers()
-        {
-            return topSecretNumbers.Where(number => IsEven(number));
-        }
-
-        private bool IsEven(int number)
-        {
-            return number % 2 == 0;
+            return numbers.Sum();
         }
     }
 }

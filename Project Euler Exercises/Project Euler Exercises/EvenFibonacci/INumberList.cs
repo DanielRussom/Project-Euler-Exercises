@@ -4,7 +4,7 @@ namespace Project_Euler_Exercises.EvenFibonacci
 {
     public interface INumberList
     {
-        int SumEven();
+        int Sum();
         IReadOnlyCollection<int> GetNumbers();
     }
 }
